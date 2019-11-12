@@ -2,6 +2,10 @@ package com.company;
 public class Array {
     private int [][] location = new int[4][4];
 
+    public Array() {
+
+    }
+
     public int[][] getLocation() {
         return location;
     }
