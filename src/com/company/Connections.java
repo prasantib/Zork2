@@ -5,17 +5,17 @@ import java.util.Random;
 
 public class Connections {
 
-    public int makeMove(int[][] arr, int row, int col,int choose) {
+    public int makeMove(int[][] arr, int row, int col) {
         boolean ver = true;
-
+        int choose=0;
         while (ver) {
             Random r = new Random();
 
             ArrayList<Integer> newArr=new ArrayList<>();
-            isFilledAt(newArr,arr,row,(col+1));
-            isFilledAt(newArr,arr,(row -1),(col));
-            isFilledAt(newArr,arr,row,(col-1));
-            isFilledAt(newArr,arr,(row+1),(col));
+            isFilledAt(newArr,arr,row,(col+1),"Right");
+            isFilledAt(newArr,arr,(row -1),(col),"Up");
+            isFilledAt(newArr,arr,row,(col-1),"Left");
+            isFilledAt(newArr,arr,(row+1),(col),"Down");
 
             int random = r.nextInt(newArr.size());
 
@@ -30,12 +30,12 @@ public class Connections {
 
         }
 
+
         return choose;
     }
 
 
-
-    public ArrayList<Integer> isFilledAt(ArrayList<Integer> arrNew,int[][] arr, int row, int col)
+    public ArrayList<Integer> isFilledAt(ArrayList<Integer> arrNew,int[][] arr, int row, int col,String dir)
     {
 
         // Calls the method that fills tempArray datas
@@ -50,7 +50,7 @@ public class Connections {
         }
 
 
-    return arrNew;
+        return arrNew;
 
-}
+    }
 }

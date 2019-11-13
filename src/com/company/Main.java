@@ -39,7 +39,7 @@ public class Main {
 
         while(answer.equalsIgnoreCase("yes")) {
 
-            connections.makeMove(location, x, y,choose);
+            choose=connections.makeMove(location, x, y);
 
             for (int i = 0; i < location.length; i++) {
                 for (int j = 0; j < location[i].length; j++) {
@@ -51,7 +51,7 @@ public class Main {
             }
 
 
-            System.out.append("Do want to go to the next room?(yes/no)?");
+            System.out.println("Do want to go to the next room?(yes/no)?");
             answer=key.next();
             if(answer.equalsIgnoreCase("yes")){
                 answer="yes";
