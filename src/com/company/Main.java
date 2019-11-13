@@ -27,9 +27,10 @@ public class Main {
                 }
             }
     }
-        System.out.println(location[3][3]);
-        System.out.println(location[1][2]);
-        System.out.println(Arrays.deepToString(location));
+        System.out.println(Arrays.toString(location[0]));
+        System.out.println(Arrays.toString(location[1]));
+        System.out.println(Arrays.toString(location[2]));
+        System.out.println(Arrays.toString(location[3]));
 
         System.out.println("Enter the value of x :");
         x=key.nextInt();

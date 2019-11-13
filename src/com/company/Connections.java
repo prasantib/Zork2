@@ -23,7 +23,6 @@ public class Connections {
             if (!(choose == 0)) {
                 System.out.println("you are in room " + choose);
                 ver = false;
-                break;
 
 
             }
@@ -41,7 +40,7 @@ public class Connections {
 
         // Calls the method that fills tempArray datas
         try {
-            if (( row < 4 && row >=0)||(col<= 4 && col >= 0)) {
+            if (( row < 4 && row >=0)&&(col<= 4 && col >= 0)) {
                 arrNew.add(arr[row][col]);
             }
 
