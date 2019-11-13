@@ -3,7 +3,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-
+        int x;
+        int y;
+        int choose=0;
         Scanner key=new Scanner(System.in);
         String answer="yes";
         Connections connections=new Connections();
@@ -29,11 +31,32 @@ public class Main {
         System.out.println(location[1][2]);
         System.out.println(Arrays.deepToString(location));
 
+        System.out.println("Enter the value of x :");
+        x=key.nextInt();
+        System.out.println("Enter the value of y :");
+        y=key.nextInt();
+
         while(answer.equalsIgnoreCase("yes")) {
 
-            connections.makeMove(location, 2, 2);
+            connections.makeMove(location, x, y,choose);
+
+            for (int i = 0; i < location.length; i++) {
+                for (int j = 0; j < location[i].length; j++) {
+                    if (location[i][j] == choose) {
+                        x=j;
+                        y=i;
+                    }
+                }
+            }
+
+
             System.out.append("Do want to go to the next room?(yes/no)?");
             answer=key.next();
+            if(answer.equalsIgnoreCase("yes")){
+                answer="yes";
+            }else if(answer.equalsIgnoreCase("q")){
+                answer="No";
+            }
         }
     }
     }
